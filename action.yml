@@ -1,0 +1,32 @@
+name: "Upload to Bintray"
+description: "Upload and publish a binary to Bintray"
+branding:
+  icon: 'upload'
+  color: 'gray-dark'
+inputs:
+  repository:
+    description: "Bintray repository name"
+    required: true
+  package:
+    description: "Bintray package name"
+    required: true
+  version:
+    description: "Binary version number"
+    required: true
+  sourcePath:
+    description: "Path to source binary to upload"
+    required: true
+  username:
+    description: "Bintray username"
+    required: true
+  apiKey:
+    description: "Bintray API Key"
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.repository }}
+    - ${{ inputs.package }}
+    - ${{ inputs.version }}
+    - ${{ inputs.sourcePath }}
