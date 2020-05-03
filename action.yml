@@ -22,6 +22,9 @@ inputs:
   apiKey:
     description: "Bintray API Key"
     required: true
+  override:
+    description: "To override an already-published artifact you need to set this to 1"
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
