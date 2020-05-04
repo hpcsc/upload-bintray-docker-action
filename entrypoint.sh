@@ -13,7 +13,7 @@ for FILE in ${SOURCE_PATH}; do
             -u${INPUT_USERNAME}:${INPUT_APIKEY} \
             -H "X-Bintray-Package:${PACKAGE}" \
             -H "X-Bintray-Version:${VERSION}" \
-            -H "X-Bintray-Override:${INPUT_OVERRIDE:0}" \
+            -H "X-Bintray-Override:${INPUT_OVERRIDE:-0}" \
             ${UPLOAD_URL})
 
     if [ "$(echo ${RESULT} | jq -r '.message')" != "success" ]; then
