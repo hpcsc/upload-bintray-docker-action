@@ -5,7 +5,7 @@ A docker action to upload one or more binary files matching `sourcePath` to Bint
 This docker action assumes Bintray repository and package are already created
 
 ```
-uses: hpcsc/upload-bintray-docker-action@v1
+uses: hpcsc/upload-bintray-docker-action@v1.1
 with:
   repository: my-bintray-repository
   package: my-bintray-package
